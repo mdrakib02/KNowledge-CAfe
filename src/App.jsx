@@ -3,15 +3,38 @@ import './App.css'
 import Header from './Componants/Header/Header'
 import Blogs from './Componants/Blogs/Blogs'
 import Bookmarks from './Componants/Bookmarks/Bookmarks'
-function App() {
+import { useState } from 'react'
 
+
+function App() {
+const [bookmark, setBookmark] = useState([]);
+const [readingTime, setReadingTime] = useState(0);
+
+
+const handleBookmark = (blog) => {
+  const newBookmark = [...bookmark, blog];
+  setBookmark(newBookmark);
+}
+
+const handleReadMark = (time) =>{
+  const newReadMarkTime = readingTime + time;
+  setReadingTime(newReadMarkTime);
+}
 
   return (
     <>
     <Header></Header>
-     <main className='flex w-10/12 mx-auto mt-20 items-center'>
-     <Blogs></Blogs>
-     <Bookmarks></Bookmarks>
+     <main className='flex w-10/12 mx-auto mt-20 justify-center gap-x-6'>
+     <Blogs handleBookmark={handleBookmark}
+     handleReadMark={handleReadMark}
+     >
+      
+     </Blogs>
+     <Bookmarks bookmark={bookmark}
+     readingTime={readingTime}
+     >
+
+     </Bookmarks>
      </main>
     </>
   )
