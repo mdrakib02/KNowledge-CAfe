@@ -1,7 +1,6 @@
 import Bookmark from "../Bookmark/Bookmark";
 
 export default function Bookmarks({ bookmark, readingTime }) {
-  console.log(readingTime)
   return (
     <div className="w-1/3">
       <div>

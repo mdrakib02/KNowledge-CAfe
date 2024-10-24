@@ -16,11 +16,12 @@ const handleBookmark = (blog) => {
   setBookmark(newBookmark);
 }
 
-const handleReadMark = (time) =>{
+const handleReadMark = (id,time) =>{
   const newReadMarkTime = readingTime + time;
   setReadingTime(newReadMarkTime);
+  const remainingBookMark = bookmark.filter(bookmark => bookmark.id !== id);
+  setBookmark(remainingBookMark);
 }
-console.log(readingTime)
 
   return (
     <>

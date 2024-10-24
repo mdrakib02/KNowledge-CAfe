@@ -3,7 +3,7 @@ import { CiBookmark } from "react-icons/ci";
 
 
 export default function Blog({blog, handleBookmark, handleReadMark}) {
-    const {title, cover,author_img, reading_time, post_date, author, hashtag} =blog;
+    const {title, cover,author_img, reading_time, post_date, author, hashtag,id} =blog;
   return (
     <div className="md:">
        
@@ -32,7 +32,7 @@ export default function Blog({blog, handleBookmark, handleReadMark}) {
             hashtag.map(tag => <span>{tag}</span>)
           }
         </p>
-        <button onClick={()=>handleReadMark(reading_time)} className="text-bold text-blue-700">Read Mark</button>
+        <button onClick={()=>handleReadMark(id,reading_time)} className="text-bold text-blue-700">Read Mark</button>
     </div>
   )
 }
