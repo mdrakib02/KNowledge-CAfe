@@ -20,6 +20,7 @@ const handleReadMark = (time) =>{
   const newReadMarkTime = readingTime + time;
   setReadingTime(newReadMarkTime);
 }
+console.log(readingTime)
 
   return (
     <>
